@@ -194,4 +194,86 @@
 --WHERE Id = 1
 --CORREGI ERROR DE TIPEO
 
+--VIDEO 5
 
+--SELECT Usuario.Id,Usuario.Documento,Usuario.NombreCompleto,Usuario.Correo,Usuario.Clave,Usuario.Estado,Rol.Id,Rol.Descripcion FROM Usuario
+--inner join rol on Rol.Id = Usuario.IdRol
+
+--Create proc SP_RegistrarUsuario(
+--@Documento nvarchar(60),
+--@NombreCompleto nvarchar(60),
+--@Correo nvarchar(60),
+--@Clave nvarchar(60),
+--@IdRol int,
+--@Estado bit,
+--@IdUsuarioResultado int output,
+--@Mensaje nvarchar(500) output
+--)
+--as
+--begin
+--	set @IdUsuarioResultado = 0
+--	set @Mensaje = ''
+
+--	if not exists(select * from Usuario where Documento = @Documento)
+--	begin
+--		insert into Usuario(Documento,NombreCompleto,Correo,Clave,IdRol,Estado) values
+--		(@Documento, @NombreCompleto, @Correo, @Clave, @IdRol, @Estado)
+
+--		set @IdUsuarioResultado = SCOPE_IDENTITY()
+--	end
+--	else
+--		set @Mensaje = 'Documento ya existente'
+--end
+--fin procedure
+
+--ejecuto el procedure
+--declare @IdUsuarioGenerado int
+--declare @Mensaje nvarchar(500)
+
+--exec SP_RegistrarUsuario '123','pruebas','test@gmail.com','123',2,2,@IdUsuarioGenerado output, @Mensaje output
+
+--select @IdUsuarioGenerado
+
+--select @Mensaje
+
+--Create proc SP_EditarUsuario(
+--@IdUsuario int,
+--@Documento nvarchar(60),
+--@NombreCompleto nvarchar(60),
+--@Correo nvarchar(60),
+--@Clave nvarchar(60),
+--@IdRol int,
+--@Estado bit,
+--@Respuesta bit output,
+--@Mensaje nvarchar(500) output
+--)
+--as
+--begin
+--	set @Respuesta = 0
+--	set @Mensaje = ''
+
+--	if not exists(select * from Usuario where Documento = @Documento and Id != @IdUsuario)
+--	begin
+--		update Usuario set
+--		Documento = @Documento,
+--		NombreCompleto = @NombreCompleto,
+--		Correo = @Correo,
+--		Clave = @Clave,
+--		IdRol = @IdRol,
+--		Estado = @Estado
+--		where Id = @IdUsuario
+
+--		set @Respuesta = 1
+--	end
+--	else
+--		set @Mensaje = 'Documento ya existente'
+--end
+
+--declare @Respuesta bit
+--declare @Mensaje nvarchar(500)
+
+--exec SP_EditarUsuario 3,'123','pruebas 2','test@gmail.com','123',2,2,@Respuesta output, @Mensaje output
+
+--select @Respuesta
+
+--select @Mensaje
