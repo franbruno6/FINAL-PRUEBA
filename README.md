@@ -1,6 +1,6 @@
-# Final Prueba
+# Proyecto Sistema de Venta - Windows Forms
 
-Repositorio creado para probar un sistema para el final de Ingenieria de Software.
+Proyecto de prueba para aprender a desarrollar aplicaciones de escritorios Windows Forms con C#, .Net Framework y SQL Server.
 
 ## Link de la lista de reproduccion
 
