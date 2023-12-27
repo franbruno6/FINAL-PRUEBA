@@ -1,4 +1,4 @@
---PRIMER VIDEO
+--VIDEO 1
 
 --create database FinalPrueba
 
@@ -130,7 +130,7 @@
 --FechaCreacion datetime default getdate()
 --)
 
---SEGUNDO VIDEO
+--VIDEO 2
 
 --select * from usuario
 
@@ -145,7 +145,7 @@
 --values
 --('101010','ADMIN','@GMAIL.COM','123',1,1)
 
---TERCER VIDEO
+--VIDEO 3
 
 --select * from permiso
 
@@ -186,3 +186,12 @@
 --('202020','EMPLEADO','@GMAIL.COM','123',2,1)
 
 --select * from Usuario
+
+--VIDEO 4
+
+--UPDATE permiso
+--SET nombremenu = 'menuusuarios'
+--WHERE Id = 1
+--CORREGI ERROR DE TIPEO
+
+
