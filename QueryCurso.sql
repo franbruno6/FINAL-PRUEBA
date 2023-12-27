@@ -1,3 +1,5 @@
+--PRIMER VIDEO
+
 --create database FinalPrueba
 
 --use FinalPrueba
@@ -127,3 +129,18 @@
 --SubTotal decimal(10,2),
 --FechaCreacion datetime default getdate()
 --)
+
+--SEGUNDO VIDEO
+
+--select * from usuario
+
+--select * from rol
+
+--insert into rol (Descripcion)
+--values
+--('ADMINISTRADOR')
+
+
+--insert into usuario (Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
+--values
+--('101010','ADMIN','@GMAIL.COM','123',1,1)

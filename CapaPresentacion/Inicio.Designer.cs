@@ -58,13 +58,14 @@
             this.menuacercade});
             this.menu.Location = new System.Drawing.Point(0, 57);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1278, 86);
+            this.menu.Size = new System.Drawing.Size(1278, 84);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
             // menuusuarios
             // 
             this.menuusuarios.AutoSize = false;
+            this.menuusuarios.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuusuarios.ForeColor = System.Drawing.Color.Black;
             this.menuusuarios.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
             this.menuusuarios.IconColor = System.Drawing.Color.Black;
@@ -79,6 +80,7 @@
             // menumantenedor
             // 
             this.menumantenedor.AutoSize = false;
+            this.menumantenedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menumantenedor.ForeColor = System.Drawing.Color.Black;
             this.menumantenedor.IconChar = FontAwesome.Sharp.IconChar.Tools;
             this.menumantenedor.IconColor = System.Drawing.Color.Black;
@@ -93,6 +95,7 @@
             // menuventas
             // 
             this.menuventas.AutoSize = false;
+            this.menuventas.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuventas.ForeColor = System.Drawing.Color.Black;
             this.menuventas.IconChar = FontAwesome.Sharp.IconChar.Tags;
             this.menuventas.IconColor = System.Drawing.Color.Black;
@@ -107,6 +110,7 @@
             // menucompras
             // 
             this.menucompras.AutoSize = false;
+            this.menucompras.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menucompras.ForeColor = System.Drawing.Color.Black;
             this.menucompras.IconChar = FontAwesome.Sharp.IconChar.DollyFlatbed;
             this.menucompras.IconColor = System.Drawing.Color.Black;
@@ -121,6 +125,7 @@
             // menuclientes
             // 
             this.menuclientes.AutoSize = false;
+            this.menuclientes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuclientes.ForeColor = System.Drawing.Color.Black;
             this.menuclientes.IconChar = FontAwesome.Sharp.IconChar.UserGroup;
             this.menuclientes.IconColor = System.Drawing.Color.Black;
@@ -135,6 +140,7 @@
             // menuproveedores
             // 
             this.menuproveedores.AutoSize = false;
+            this.menuproveedores.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuproveedores.ForeColor = System.Drawing.Color.Black;
             this.menuproveedores.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
             this.menuproveedores.IconColor = System.Drawing.Color.Black;
@@ -149,6 +155,7 @@
             // menureportes
             // 
             this.menureportes.AutoSize = false;
+            this.menureportes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menureportes.ForeColor = System.Drawing.Color.Black;
             this.menureportes.IconChar = FontAwesome.Sharp.IconChar.BarChart;
             this.menureportes.IconColor = System.Drawing.Color.Black;
@@ -163,6 +170,7 @@
             // menuacercade
             // 
             this.menuacercade.AutoSize = false;
+            this.menuacercade.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuacercade.ForeColor = System.Drawing.Color.Black;
             this.menuacercade.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
             this.menuacercade.IconColor = System.Drawing.Color.Black;
@@ -201,9 +209,9 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 143);
+            this.panel1.Location = new System.Drawing.Point(0, 141);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1278, 501);
+            this.panel1.Size = new System.Drawing.Size(1278, 503);
             this.panel1.TabIndex = 3;
             // 
             // Inicio
@@ -218,6 +226,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.MainMenuStrip = this.menu;
             this.Name = "Inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
