@@ -277,3 +277,45 @@
 --select @Respuesta
 
 --select @Mensaje
+
+--VIDEO 6
+
+--Create proc SP_EliminarUsuario(
+--@IdUsuario int,
+--@Respuesta bit output,
+--@Mensaje nvarchar(500) output
+--)
+--as
+--begin
+--	set @Respuesta = 0
+--	set @Mensaje = ''
+--	declare @pasoreglas bit = 1
+
+--	if exists(select * from Compra
+--	inner join Usuario on Usuario.Id = Compra.IdUsuario
+--	where Usuario.Id = @IdUsuario
+--	)
+--	begin
+--		set @pasoreglas = 0
+--		set @Respuesta = 0
+--		set @Mensaje = @Mensaje + 'No se puede eliminar. El usuario se encuentra relacionado a una compra\n'	
+--	end
+
+--	if exists(select * from Venta
+--	inner join Usuario on Usuario.Id = Venta.IdUsuario
+--	where Usuario.Id = @IdUsuario
+--	)
+--	begin
+--		set @pasoreglas = 0
+--		set @Respuesta = 0
+--		set @Mensaje = @Mensaje + 'No se puede eliminar. El usuario se encuentra relacionado a una venta\n'	
+--	end
+
+--	if (@pasoreglas = 1)
+--	begin
+--		delete from Usuario where Id = @IdUsuario
+--		set @Respuesta = 1
+--	end
+--end
+
+--select * from Usuario

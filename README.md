@@ -1,4 +1,4 @@
-# Proyecto Sistema de Venta - Windows Forms
+# Proyecto Sistema de Ventas - Windows Forms
 
 Proyecto de prueba para aprender a desarrollar aplicaciones de escritorios Windows Forms con C#, .Net Framework y SQL Server.
 

@@ -59,6 +59,37 @@ namespace CapaPresentacion
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            string Mensaje = string.Empty;
+            
+            Usuario objUsuario = new Usuario()
+            {
+                IdUsuario = Convert.ToInt32(txtid.Text),
+                Documento = txtdocumento.Text,
+                NombreCompleto = txtnombrecompleto.Text,
+                Correo = txtcorreo.Text,
+                Clave = txtclave.Text,
+                oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) },
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
+            };
+
+            int idUsuarioRegistrado = new CN_Usuario().Registrar(objUsuario, out Mensaje);
+
+            if(idUsuarioRegistrado != 0)
+            {
+                MessageBox.Show("Usuario registrado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvdata.Rows.Add(new object[] { "", idUsuarioRegistrado, objUsuario.Documento, objUsuario.NombreCompleto, objUsuario.Correo, objUsuario.Clave,
+                                   objUsuario.oRol.IdRol,
+                                   objUsuario.oRol.Descripcion,
+                                   objUsuario.Estado == true ? 1 : 0,
+                                   objUsuario.Estado == true ? "Activo" : "Inactivo"
+                               });
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show(Mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             //dgvdata.Rows.Add(new object[] { "", txtid.Text, txtdocumento.Text, txtnombrecompleto.Text, txtcorreo.Text, txtclave.Text,
             //        ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
             //        ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
