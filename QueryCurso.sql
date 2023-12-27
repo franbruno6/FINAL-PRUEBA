@@ -144,3 +144,45 @@
 --insert into usuario (Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
 --values
 --('101010','ADMIN','@GMAIL.COM','123',1,1)
+
+--TERCER VIDEO
+
+--select * from permiso
+
+--insert into permiso(IdRol,NombreMenu)
+--values
+--(1,'menuusarios'),
+--(1,'menumantenedor'),
+--(1,'menuventas'),
+--(1,'menucompras'),
+--(1,'menuclientes'),
+--(1,'menuproveedores'),
+--(1,'menureportes'),
+--(1,'menuacercade')
+
+--insert into rol (Descripcion)
+--values
+--('EMPLEADO')
+
+--select * from Rol
+
+--insert into permiso(IdRol,NombreMenu)
+--values
+--(2,'menuventas'),
+--(2,'menucompras'),
+--(2,'menuclientes'),
+--(2,'menuproveedores'),
+--(2,'menuacercade')
+
+--select * from Permiso
+
+--select Permiso.IdRol,Permiso.NombreMenu from Permiso
+--inner join Rol on Rol.Id = Permiso.IdRol
+--inner join Usuario on Usuario.IdRol = Rol.Id
+--where Usuario.Id = 2
+
+--insert into usuario (Documento,NombreCompleto,Correo,Clave,IdRol,Estado)
+--values
+--('202020','EMPLEADO','@GMAIL.COM','123',2,1)
+
+--select * from Usuario

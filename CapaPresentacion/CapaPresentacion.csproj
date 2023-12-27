@@ -53,6 +53,66 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CP_Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Categoria.Designer.cs">
+      <DependentUpon>CP_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Clientes.Designer.cs">
+      <DependentUpon>CP_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Compras.Designer.cs">
+      <DependentUpon>CP_Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_DetalleCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_DetalleCompra.Designer.cs">
+      <DependentUpon>CP_DetalleCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_DetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_DetalleVenta.Designer.cs">
+      <DependentUpon>CP_DetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Producto.Designer.cs">
+      <DependentUpon>CP_Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Proveedores.Designer.cs">
+      <DependentUpon>CP_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Reportes.Designer.cs">
+      <DependentUpon>CP_Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Usuario.Designer.cs">
+      <DependentUpon>CP_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CP_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Ventas.Designer.cs">
+      <DependentUpon>CP_Ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +127,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CP_Categoria.resx">
+      <DependentUpon>CP_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Clientes.resx">
+      <DependentUpon>CP_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Compras.resx">
+      <DependentUpon>CP_Compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_DetalleCompra.resx">
+      <DependentUpon>CP_DetalleCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_DetalleVenta.resx">
+      <DependentUpon>CP_DetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Producto.resx">
+      <DependentUpon>CP_Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Proveedores.resx">
+      <DependentUpon>CP_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Reportes.resx">
+      <DependentUpon>CP_Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Usuario.resx">
+      <DependentUpon>CP_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Ventas.resx">
+      <DependentUpon>CP_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>

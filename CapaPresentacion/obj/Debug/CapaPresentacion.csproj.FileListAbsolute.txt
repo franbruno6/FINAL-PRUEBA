@@ -17,3 +17,13 @@ C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPres
 C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\bin\Debug\CapaEntidad.pdb
 C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\bin\Debug\CapaNegocio.pdb
 C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Categoria.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Clientes.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Compras.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Producto.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Proveedores.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Reportes.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Usuario.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Ventas.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_DetalleCompra.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_DetalleVenta.resources

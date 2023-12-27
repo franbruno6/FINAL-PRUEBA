@@ -28,11 +28,11 @@ namespace CapaPresentacion
         {
             List<Usuario> TEST = new CN_Usuario().Listar();
             
-            Usuario ousuario = new CN_Usuario().Listar().Where(x => x.Documento == txtdocumento.Text && x.Clave == txtcontrasena.Text).FirstOrDefault();
+            Usuario oUsuario = new CN_Usuario().Listar().Where(x => x.Documento == txtdocumento.Text && x.Clave == txtcontrasena.Text).FirstOrDefault();
 
-            if (ousuario != null)
+            if (oUsuario != null)
             {
-                Inicio form = new Inicio();
+                Inicio form = new Inicio(oUsuario);
 
                 form.Show();
                 this.Hide();
