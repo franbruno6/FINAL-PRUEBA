@@ -1,6 +1,7 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
+using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -274,6 +275,62 @@ namespace CapaPresentacion
                     }
                 }
             }  
+        }
+        private void btnexportar_Click(object sender, EventArgs e)
+        {
+            if (dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay datos para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+
+                foreach (DataGridViewColumn columna in dgvdata.Columns)
+                {
+                    if (columna.Visible && columna.Name != "btnseleccionar")
+                    {
+                        dt.Columns.Add(columna.HeaderText,typeof(string));
+                    }
+                }
+
+                foreach (DataGridViewRow fila in dgvdata.Rows)
+                {
+                    if(fila.Visible)
+                    {
+                        dt.Rows.Add(new object[]
+                        {
+                            fila.Cells["Codigo"].Value.ToString(),
+                            fila.Cells["Nombre"].Value.ToString(),
+                            fila.Cells["Descripcion"].Value.ToString(),
+                            fila.Cells["Categoria"].Value.ToString(),
+                            fila.Cells["Stock"].Value.ToString(),
+                            fila.Cells["PrecioCompra"].Value.ToString(),
+                            fila.Cells["PrecioVenta"].Value.ToString(),
+                            fila.Cells["Estado"].Value.ToString()
+                        });
+                    }
+                }
+
+                SaveFileDialog fichero = new SaveFileDialog();
+                fichero.FileName = String.Format("ReporteProductos_{0}.xlsx", DateTime.Now.ToString("ddMMYYYYHHmmss"));
+                fichero.Filter = "Excel Files | *.xlsx";
+                if (fichero.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dt, "Informe");
+                        hoja.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(fichero.FileName);
+                        MessageBox.Show("Datos exportados correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error al exportar los datos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
