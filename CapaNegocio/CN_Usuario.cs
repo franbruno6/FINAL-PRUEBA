@@ -16,7 +16,6 @@ namespace CapaNegocio
         {
             return objetoCD.Listar();
         }
-
         public int Registrar(Usuario obj, out string Mensaje)
         {
             Mensaje = string.Empty;
@@ -43,7 +42,6 @@ namespace CapaNegocio
                 return 0;
             }
         }
-
         public bool Editar(Usuario obj, out string Mensaje)
         {
             Mensaje = string.Empty;
@@ -70,7 +68,6 @@ namespace CapaNegocio
                 return false;
             }
         }
-
         public bool Eliminar(Usuario obj, out string Mensaje)
         {
             return objetoCD.Eliminar(obj, out Mensaje);

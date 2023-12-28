@@ -59,7 +59,6 @@ namespace CapaDatos
                 return lista;
             }
         }
-
         public int Registrar(Usuario obj, out string Mensaje)
         {
             int idUsuarioGenerado = 0;
@@ -99,7 +98,6 @@ namespace CapaDatos
 
             return idUsuarioGenerado;
         }
-
         public bool Editar(Usuario obj, out string Mensaje)
         {
             bool respuesta = false;
@@ -141,7 +139,6 @@ namespace CapaDatos
 
             return respuesta;
         }
-
         public bool Eliminar(Usuario obj, out string Mensaje)
         {
             bool respuesta = false;

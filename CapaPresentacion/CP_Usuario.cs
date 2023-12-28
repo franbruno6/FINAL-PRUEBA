@@ -48,7 +48,13 @@ namespace CapaPresentacion
 
             foreach (Usuario item in listaUsuario)
             {
-                dgvdata.Rows.Add(new object[] { "", item.IdUsuario, item.Documento, item.NombreCompleto, item.Correo, item.Clave,
+                dgvdata.Rows.Add(new object[] { 
+                    "", 
+                    item.IdUsuario,
+                    item.Documento,
+                    item.NombreCompleto,
+                    item.Correo,
+                    item.Clave,
                     item.oRol.IdRol,
                     item.oRol.Descripcion,
                     item.Estado == true ? 1 : 0,
@@ -79,7 +85,13 @@ namespace CapaPresentacion
                 if(idUsuarioRegistrado != 0)
                 {
                     MessageBox.Show("Usuario registrado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvdata.Rows.Add(new object[] { "", idUsuarioRegistrado, objUsuario.Documento, objUsuario.NombreCompleto, objUsuario.Correo, objUsuario.Clave,
+                    dgvdata.Rows.Add(new object[] { 
+                        "", 
+                        idUsuarioRegistrado,
+                        objUsuario.Documento, 
+                        objUsuario.NombreCompleto,
+                        objUsuario.Correo, 
+                        objUsuario.Clave,
                         ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
                         ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
                         ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),

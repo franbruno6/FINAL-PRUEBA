@@ -45,7 +45,10 @@ namespace CapaPresentacion
 
             foreach (Categoria item in lista)
             {
-                dgvdata.Rows.Add(new object[] { "", item.IdCategoria, item.Descripcion,
+                dgvdata.Rows.Add(new object[] { 
+                    "", 
+                    item.IdCategoria,
+                    item.Descripcion,
                     item.Estado == true ? 1 : 0,
                     item.Estado == true ? "Activo" : "Inactivo"
                 });
@@ -62,15 +65,18 @@ namespace CapaPresentacion
                 Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
             };
 
+            //REGISTRAR
             if (objCategoria.IdCategoria == 0)
             {
-                //REGISTRAR
                 int idCategoriaRegistrado = new CN_Categoria().Registrar(objCategoria, out Mensaje);
 
                 if (idCategoriaRegistrado != 0)
                 {
                     MessageBox.Show("Categoria registrada correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvdata.Rows.Add(new object[] { "", idCategoriaRegistrado, objCategoria.Descripcion,
+                    dgvdata.Rows.Add(new object[] {
+                        "", 
+                        idCategoriaRegistrado, 
+                        objCategoria.Descripcion,
                         ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
                         ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
                     });
@@ -82,9 +88,10 @@ namespace CapaPresentacion
                     Limpiar();
                 }
             }
+            //EDITAR
             else
             {
-                //EDITAR
+                
                 bool resultado = new CN_Categoria().Editar(objCategoria, out Mensaje);
 
                 if (resultado)
@@ -102,6 +109,7 @@ namespace CapaPresentacion
                 else
                 {
                     MessageBox.Show(Mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Limpiar();
                 }
             }
         }
