@@ -22,7 +22,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT Usuario.Id,Usuario.Documento,Usuario.NombreCompleto,Usuario.Correo,Usuario.Clave,Usuario.Estado,Rol.Id,Rol.Descripcion FROM Usuario");
+                    query.AppendLine("SELECT Usuario.Id,Usuario.Documento,Usuario.NombreCompleto,Usuario.Correo,Usuario.Clave,Usuario.Estado,Usuario.IdRol,Rol.Descripcion FROM Usuario");
                     query.AppendLine("inner join rol on Rol.Id = Usuario.IdRol");
 
 
@@ -45,7 +45,7 @@ namespace CapaDatos
                                 Estado = Convert.ToBoolean(dr["Estado"]),
                                 oRol = new Rol()
                                 {
-                                    IdRol = Convert.ToInt32(dr["Id"]),
+                                    IdRol = Convert.ToInt32(dr["IdRol"]),
                                     Descripcion = dr["Descripcion"].ToString()
                                 }
                             });
@@ -130,7 +130,7 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -166,7 +166,7 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
