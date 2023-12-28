@@ -14,7 +14,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-
         private void CP_Usuario_Load(object sender, EventArgs e)
         {
             List<Rol> listaRol = new CN_Rol().Listar();
@@ -57,7 +56,6 @@ namespace CapaPresentacion
                 });
             }
         }
-
         private void btnguardar_Click(object sender, EventArgs e)
         {
             string Mensaje = string.Empty;
@@ -126,7 +124,6 @@ namespace CapaPresentacion
         {
             Limpiar();
         }
-
         private void btneliminar_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) != 0)
@@ -157,11 +154,10 @@ namespace CapaPresentacion
                 }
             }
         }
-
         private void Limpiar()
         {
             txtindice.Text = "-1";
-            txtid.Text = "";
+            txtid.Text = "0";
             txtdocumento.Text = "";
             txtnombrecompleto.Text = "";
             txtcorreo.Text = "";
@@ -199,10 +195,7 @@ namespace CapaPresentacion
             { 
                 fila.Visible = true;
             }
-
-
         }
-
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if(e.RowIndex < 0)
@@ -223,7 +216,6 @@ namespace CapaPresentacion
                 e.Handled = true;
             }
         }
-
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")

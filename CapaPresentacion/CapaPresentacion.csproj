@@ -199,9 +199,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\circle-check-solid.svg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\check.png" />
   </ItemGroup>
   <ItemGroup>
