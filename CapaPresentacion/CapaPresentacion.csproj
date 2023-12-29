@@ -157,6 +157,12 @@
     <Compile Include="CP_DetalleVenta.Designer.cs">
       <DependentUpon>CP_DetalleVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="CP_Negocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CP_Negocio.Designer.cs">
+      <DependentUpon>CP_Negocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="CP_Producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CP_DetalleVenta.resx">
       <DependentUpon>CP_DetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CP_Negocio.resx">
+      <DependentUpon>CP_Negocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CP_Producto.resx">
       <DependentUpon>CP_Producto.cs</DependentUpon>
