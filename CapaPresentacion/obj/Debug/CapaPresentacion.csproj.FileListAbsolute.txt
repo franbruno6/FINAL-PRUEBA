@@ -48,3 +48,5 @@ C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPres
 C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Compra.resources
 C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Proveedor.resources
 C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.CP_Negocio.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProveedor.resources
+C:\Users\franb\Documents\Fran\Ingenieria de Software\CursoSistemaVentas\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProducto.resources
