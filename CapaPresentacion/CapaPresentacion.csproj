@@ -133,11 +133,11 @@
     <Compile Include="CP_Categoria.Designer.cs">
       <DependentUpon>CP_Categoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="CP_Clientes.cs">
+    <Compile Include="CP_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CP_Clientes.Designer.cs">
-      <DependentUpon>CP_Clientes.cs</DependentUpon>
+    <Compile Include="CP_Cliente.Designer.cs">
+      <DependentUpon>CP_Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="CP_Compras.cs">
       <SubType>Form</SubType>
@@ -205,8 +205,8 @@
     <EmbeddedResource Include="CP_Categoria.resx">
       <DependentUpon>CP_Categoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CP_Clientes.resx">
-      <DependentUpon>CP_Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="CP_Cliente.resx">
+      <DependentUpon>CP_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CP_Compras.resx">
       <DependentUpon>CP_Compras.cs</DependentUpon>

@@ -117,7 +117,7 @@ namespace CapaPresentacion
 
         private void menuclientes_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(sender as IconMenuItem, new CP_Clientes());
+            AbrirFormulario(sender as IconMenuItem, new CP_Cliente());
         }
 
         private void menuproveedores_Click(object sender, EventArgs e)

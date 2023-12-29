@@ -2,7 +2,6 @@
 
 SELECT Usuario.Id,Usuario.Documento,Usuario.NombreCompleto,Usuario.Correo,Usuario.Clave,Usuario.Estado,Rol.Id,Rol.Descripcion FROM Usuario
 inner join rol on Rol.Id = Usuario.IdRol
-
 go
 
 Create procedure SP_RegistrarUsuario(
@@ -89,6 +88,7 @@ select @Respuesta
 select @Mensaje
 
 go
+
 --VIDEO 6--
 
 Create proc SP_EliminarUsuario(
@@ -135,6 +135,7 @@ go
 --VIDEO 8--
 
 select * from Categoria
+go
 
 create procedure SP_RegistrarCategoria(
 @Descripcion nvarchar(100),
@@ -229,6 +230,7 @@ go
 --VIDEO 9--
 
 select * from Producto
+go
 
 create procedure SP_RegistrarProducto(
 	@Codigo nvarchar(60),
@@ -328,3 +330,66 @@ begin
 	end
 end
 go
+
+--VIDEO 11--
+
+create procedure SP_RegistrarCliente(
+	@Documento nvarchar(60),
+	@NombreCompleto nvarchar(60),
+	@Correo nvarchar(60),			
+	@Telefono nvarchar(60),			
+	@Estado bit,
+	@Resultado bit output,
+	@Mensaje nvarchar(500) output
+)
+as
+begin
+	set @Resultado = 0
+	set @Mensaje = ''
+
+	if not exists (select * from Cliente where Documento = @Documento)
+	begin
+		insert into Cliente(Documento,NombreCompleto,Correo,Telefono,Estado) values (@Documento,@NombreCompleto,@Correo,@Telefono,@Estado)
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	else
+	begin
+		set @Mensaje = 'Documento ya existente'
+	end
+end
+go
+
+create procedure SP_EditarCliente(
+	@IdCliente int,
+	@Documento nvarchar(60),
+	@NombreCompleto nvarchar(60),
+	@Correo nvarchar(60),			
+	@Telefono nvarchar(60),			
+	@Estado bit,
+	@Resultado bit output,
+	@Mensaje nvarchar(500) output
+)
+as
+begin
+	set @Resultado = 0
+	set @Mensaje = ''
+
+	if not exists(select * from Cliente where Documento = @Documento and Id != @IdCliente)
+	begin
+		update Cliente set
+		Documento = @Documento,
+		NombreCompleto = @NombreCompleto,
+		Correo = @Correo,
+		Telefono = @Telefono,
+		Estado = @Estado
+		where Id = @IdCliente
+
+		set @Resultado = 1
+	end
+	else
+	begin
+		set @Mensaje = 'Codigo ya existente'
+	end
+end
+go
+

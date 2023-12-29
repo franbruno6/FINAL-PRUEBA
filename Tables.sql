@@ -195,3 +195,9 @@ insert into Producto(Codigo,Nombre,Descripcion,IdCategoria,Estado) values ('10',
 
 select * from Producto
 go
+
+--VIDEO 11--
+
+select Id,Documento,NombreCompleto,Correo,Telefono,Estado from Cliente
+
+insert into Cliente(Documento,NombreCompleto,Correo,Telefono,Estado) values ('10','Francisco Bruno','franbruno@gmail.com','341341',1)
