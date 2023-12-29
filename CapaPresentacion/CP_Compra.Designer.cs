@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class CP_Proveedores
+    partial class CP_Compra
     {
         /// <summary>
         /// Required designer variable.
@@ -37,18 +37,18 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(147, 202);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(597, 46);
+            this.label1.Size = new System.Drawing.Size(530, 46);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Hola soy el form de proveedores";
+            this.label1.Text = "Hola soy el form de compras";
             // 
-            // CP_Proveedores
+            // CP_Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Name = "CP_Proveedores";
-            this.Text = "CP_Proveedores";
+            this.Name = "CP_Compras";
+            this.Text = "CP_Compras";
             this.ResumeLayout(false);
             this.PerformLayout();
 

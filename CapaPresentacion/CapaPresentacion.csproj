@@ -139,11 +139,11 @@
     <Compile Include="CP_Cliente.Designer.cs">
       <DependentUpon>CP_Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="CP_Compras.cs">
+    <Compile Include="CP_Compra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CP_Compras.Designer.cs">
-      <DependentUpon>CP_Compras.cs</DependentUpon>
+    <Compile Include="CP_Compra.Designer.cs">
+      <DependentUpon>CP_Compra.cs</DependentUpon>
     </Compile>
     <Compile Include="CP_DetalleCompra.cs">
       <SubType>Form</SubType>
@@ -163,11 +163,11 @@
     <Compile Include="CP_Producto.Designer.cs">
       <DependentUpon>CP_Producto.cs</DependentUpon>
     </Compile>
-    <Compile Include="CP_Proveedores.cs">
+    <Compile Include="CP_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CP_Proveedores.Designer.cs">
-      <DependentUpon>CP_Proveedores.cs</DependentUpon>
+    <Compile Include="CP_Proveedor.Designer.cs">
+      <DependentUpon>CP_Proveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="CP_Reportes.cs">
       <SubType>Form</SubType>
@@ -181,11 +181,11 @@
     <Compile Include="CP_Usuario.Designer.cs">
       <DependentUpon>CP_Usuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="CP_Ventas.cs">
+    <Compile Include="CP_Venta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CP_Ventas.Designer.cs">
-      <DependentUpon>CP_Ventas.cs</DependentUpon>
+    <Compile Include="CP_Venta.Designer.cs">
+      <DependentUpon>CP_Venta.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -208,8 +208,8 @@
     <EmbeddedResource Include="CP_Cliente.resx">
       <DependentUpon>CP_Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CP_Compras.resx">
-      <DependentUpon>CP_Compras.cs</DependentUpon>
+    <EmbeddedResource Include="CP_Compra.resx">
+      <DependentUpon>CP_Compra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CP_DetalleCompra.resx">
       <DependentUpon>CP_DetalleCompra.cs</DependentUpon>
@@ -220,8 +220,8 @@
     <EmbeddedResource Include="CP_Producto.resx">
       <DependentUpon>CP_Producto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CP_Proveedores.resx">
-      <DependentUpon>CP_Proveedores.cs</DependentUpon>
+    <EmbeddedResource Include="CP_Proveedor.resx">
+      <DependentUpon>CP_Proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CP_Reportes.resx">
       <DependentUpon>CP_Reportes.cs</DependentUpon>
@@ -229,8 +229,8 @@
     <EmbeddedResource Include="CP_Usuario.resx">
       <DependentUpon>CP_Usuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CP_Ventas.resx">
-      <DependentUpon>CP_Ventas.cs</DependentUpon>
+    <EmbeddedResource Include="CP_Venta.resx">
+      <DependentUpon>CP_Venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

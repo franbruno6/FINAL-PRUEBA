@@ -93,7 +93,6 @@ go
 create table Venta(
 Id int primary key identity,
 IdUsuario int references Usuario(Id),
-IdProveedor int references Proveedor(Id),
 TipoDocumento nvarchar(60),
 NroDocumento nvarchar(60),
 DocumentoCliente nvarchar(60),
@@ -201,3 +200,48 @@ go
 select Id,Documento,NombreCompleto,Correo,Telefono,Estado from Cliente
 
 insert into Cliente(Documento,NombreCompleto,Correo,Telefono,Estado) values ('10','Francisco Bruno','franbruno@gmail.com','341341',1)
+go
+
+--VIDEO 12-- MODIFICO ERROR EN TABLA VENTAS (ESTABA EL ID PROVEEDOR QUE NO ES NECESARIO)
+--NINGUNA DE LAS SIGUIENTES FORMAS FUNCIONO. LO HICE DESDE EL OBJECT EXPLORER BUSCANDO LA TABLA, CONSTRAINTS Y ELIMINANDOLA DESDE AHI
+--TAMBIEN ELIMINE EL ATRIBUTO Y LA KEY DESDE EL OBJECT EXPLORER
+
+select name
+from sys.foreign_keys
+where referenced_object_id = object_id('Venta')
+
+alter table Venta
+drop column IdProveedor
+
+alter table Venta
+drop constraint FK__Detalle_V__IdVen__4E88ABD4
+
+SELECT CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
+WHERE CONSTRAINT_NAME = 'FK__Detalle_V__IdVen__4E88ABD4'
+
+ALTER TABLE Venta
+DROP CONSTRAINT FK__Detalle_V__IdVen__4E88ABD4
+
+SELECT CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS
+WHERE TABLE_NAME = 'Venta' AND CONSTRAINT_NAME = 'FK__Detalle_V__IdVen__4E88ABD4'
+go
+
+select * from Proveedor
+go
+
+--VIDEO 13-- TABLA NEGOCIO
+
+create table Negocio(
+Id int primary key,
+Nombre nvarchar(60),
+RUC nvarchar(60),
+Direccion nvarchar(60),
+Logo varbinary(max) NULL
+)
+
+select * from Negocio
+
+insert into Negocio (Id,Nombre,RUC,Direccion) values (1,'Codigo Estudiante','101010','av. codigo 123')
+go

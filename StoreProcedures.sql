@@ -393,3 +393,90 @@ begin
 end
 go
 
+--VIDEO 12--
+
+create procedure SP_RegistrarProveedor(
+	@Documento nvarchar(60),
+	@RazonSocial nvarchar(60),
+	@Correo nvarchar(60),			
+	@Telefono nvarchar(60),			
+	@Estado bit,
+	@Resultado bit output,
+	@Mensaje nvarchar(500) output
+)
+as
+begin
+	set @Resultado = 0
+	set @Mensaje = ''
+	declare @IdPersona int
+
+	if not exists (select * from Proveedor where Documento = @Documento)
+	begin
+		insert into Proveedor(Documento,RazonSocial,Correo,Telefono,Estado) values (@Documento,@RazonSocial,@Correo,@Telefono,@Estado)
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	else
+	begin
+		set @Mensaje = 'Documento ya existente'
+	end
+end
+go
+
+create procedure SP_EditarProveedor(
+	@IdProveedor int,
+	@Documento nvarchar(60),
+	@RazonSocial nvarchar(60),
+	@Correo nvarchar(60),			
+	@Telefono nvarchar(60),			
+	@Estado bit,
+	@Resultado bit output,
+	@Mensaje nvarchar(500) output
+)
+as
+begin
+	set @Resultado = 0
+	set @Mensaje = ''
+
+	if not exists(select * from Proveedor where Documento = @Documento and Id != @IdProveedor)
+	begin
+		update Proveedor set
+		Documento = @Documento,
+		RazonSocial = @RazonSocial,
+		Correo = @Correo,
+		Telefono = @Telefono,
+		Estado = @Estado
+		where Id = @IdProveedor
+
+		set @Resultado = 1
+	end
+	else
+	begin
+		set @Mensaje = 'Codigo ya existente'
+	end
+end
+go
+
+create procedure SP_EliminarProveedor(
+	@IdProveedor int,
+	@Resultado bit output,
+	@Mensaje nvarchar(500) output
+)
+as
+begin
+	set @Resultado = 0
+	set @Mensaje = ''
+
+	if exists(
+		select * from Compra
+		inner join Proveedor on Compra.IdProveedor = Proveedor.Id
+		where Proveedor.Id = @IdProveedor)
+	begin
+		set @Mensaje = @Mensaje + 'No se puede eliminar, el proveedor esta relacionado a una compra'
+	end
+	else
+	begin
+		delete from Proveedor where Id = @IdProveedor
+		set @Resultado = 1
+	end
+end
+go
