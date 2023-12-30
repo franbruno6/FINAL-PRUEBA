@@ -248,3 +248,25 @@ go
 
 select * from Compra where Id = 4
 select * from Detalle_Compra where IdCompra = 00004
+go
+
+--VIDEO 17-- SELECT TABLA COMPRA CON INNER JOINS PARA VER EL DETALLE DE LA COMPRA
+
+select 
+	Compra.Id,
+	Usuario.NombreCompleto,
+	Proveedor.Documento,Proveedor.RazonSocial,
+	Compra.TipoDocumento,Compra.NroDocumento,Compra.MontoTotal,convert(char(10),Compra.FechaCreacion,103)[FechaCreacion] 
+from Compra
+inner join Usuario on Usuario.Id = Compra.IdUsuario
+inner join Proveedor on Proveedor.Id = Compra.IdProveedor
+where Compra.NroDocumento = '00004'
+
+select 
+	Producto.Nombre,
+	Detalle_Compra.PrecioCompra,
+	Detalle_Compra.Cantidad,
+	Detalle_Compra.MontoTotal
+from Detalle_Compra
+inner join Producto on Producto.Id = Detalle_Compra.IdProducto
+where Detalle_Compra.IdCompra = 4

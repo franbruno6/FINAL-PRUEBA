@@ -20,7 +20,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-
         private void CP_Producto_Load(object sender, EventArgs e)
         {
             List<Categoria> listaCategoria = new CN_Categoria().Listar();

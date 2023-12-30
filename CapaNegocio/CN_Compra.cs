@@ -19,5 +19,17 @@ namespace CapaNegocio
         {
             return objetoCD.Registrar(obj, DetalleCompra, out Mensaje);
         }
+        public Compra ObtenerCompra(string numero)
+        {
+            Compra obj = objetoCD.ObtenerCompra(numero);
+
+            if (obj != null)
+            {
+                List<Detalle_Compra> lista = objetoCD.ObtenerDetalleCompra(obj.IdCompra);
+
+                obj.oListaDetalleCompra = lista;
+            }
+            return obj;
+        }
     }
 }
