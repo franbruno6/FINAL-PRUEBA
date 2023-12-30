@@ -85,8 +85,6 @@ PrecioCompra decimal(10,2) default 0,
 PrecioVenta decimal(10,2) default 0,
 Cantidad int,
 MontoTotal decimal(10,2),
-TipoDocumento nvarchar(60),
-NroDocumento nvarchar(60),
 FechaCreacion datetime default getdate()
 )
 go
@@ -245,3 +243,8 @@ select * from Negocio
 
 insert into Negocio (Id,Nombre,RUC,Direccion) values (1,'Codigo Estudiante','101010','av. codigo 123')
 go
+
+--VIDEO 16-- SELECT TABLA COMPRA
+
+select * from Compra where Id = 4
+select * from Detalle_Compra where IdCompra = 00004
