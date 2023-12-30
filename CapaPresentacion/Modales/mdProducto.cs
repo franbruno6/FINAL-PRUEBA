@@ -20,6 +20,7 @@ namespace CapaPresentacion.Modales
         {
             InitializeComponent();
         }
+        //EL MODAL DE PROVEEDOR ESTA MEJOR CONFIGURADO EL DATAGRIDVIEW. MIRAR ESA CONFIGURACION
         private void mdProducto_Load(object sender, EventArgs e)
         {
             //CARGAR COMBO BUSQUEDA

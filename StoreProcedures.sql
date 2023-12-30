@@ -480,3 +480,58 @@ begin
 	end
 end
 go
+
+--VIDEO 15-- PROCESOS PARA REGISTRAR UNA COMPRA
+
+--USO ESTO COMO UN PARAMETRO -- PARTE 15 MINTUO 44
+create type [dbo].[Edetalle_Compra] as table(
+	[IdProducto] int null,
+	[PrecioCompra] decimal(10,2) null,
+	[PrecioVenta] decimal(10,2) null,
+	[Cantidad] int null,
+	[MontoTotal] decimal(10,2) null
+)
+go
+
+create procedure SP_RegistrarCompra(
+@IdUsuario int,
+@IdProveedor int,
+@TipoDocumento nvarchar(60),
+@NumeroDocumento nvarchar(60),
+@MontoTotal decimal(10,2),
+@DetalleCompra [EDetalle_Compra] readonly,
+@Resultado bit output,
+@Mensaje nvarchar(500) output
+)
+as
+begin
+	begin try
+		declare @IdCompra int = 0
+		set @Resultado = 1
+		set @Mensaje = ''
+
+		begin transaction registro
+			
+			insert into Compra(IdUsuario,IdProveedor,TipoDocumento,NroDocumento,MontoTotal)
+			values (@IdUsuario,@IdProveedor,@TipoDocumento,@NumeroDocumento,@MontoTotal)
+
+			set @IdCompra = SCOPE_IDENTITY()
+
+			insert into Detalle_Compra(IdCompra,IdProducto,PrecioCompra,PrecioVenta,Cantidad,MontoTotal)
+			select @IdCompra,IdProducto,PrecioCompra,PrecioVenta,Cantidad,MontoTotal from @DetalleCompra
+
+			update Producto set Producto.Stock = Producto.Stock + dc.Cantidad,
+			Producto.PrecioCompra = dc.PrecioCompra,
+			Producto.PrecioVenta = dc.PrecioVenta
+			from Producto
+			inner join @DetalleCompra dc on dc.IdProducto = Producto.Id
+
+		commit transaction registro
+	end try
+	begin catch
+		set @Resultado = 0
+		set @Mensaje = ERROR_MESSAGE()
+		rollback transaction registro
+	end catch
+end
+go

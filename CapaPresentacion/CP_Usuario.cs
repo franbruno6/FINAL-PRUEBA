@@ -270,6 +270,5 @@ namespace CapaPresentacion
                 }   
             }
         }
-
     }
 }
