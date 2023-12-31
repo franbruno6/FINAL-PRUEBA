@@ -535,3 +535,60 @@ begin
 	end catch
 end
 go
+
+--VIDEO 19 -- PROCESOS PARA REGISTRAR UNA VENTA
+
+--USO ESTO COMO UN PARAMETRO -- PARTE 19 MINTUO 2
+create type [dbo].[Edetalle_Venta] as table(
+	[IdProducto] int null,
+	[PrecioVenta] decimal(10,2) null,
+	[Cantidad] int null,
+	[SubTotal] decimal(10,2) null
+)
+go
+
+create procedure SP_RegistrarVenta(
+@IdUsuario int,
+@TipoDocumento nvarchar(60),
+@NumeroDocumento nvarchar(60),
+@DocumentoCliente nvarchar(60),
+@NombreCliente nvarchar(60),
+@MontoPago decimal(10,2),
+@MontoCambio decimal(10,2),
+@MontoTotal decimal(10,2),
+@DetalleVenta [EDetalle_Venta] readonly,
+@Resultado bit output,
+@Mensaje nvarchar(500) output
+)
+as
+begin
+	begin try
+		declare @IdVenta int = 0
+		set @Resultado = 1
+		set @Mensaje = ''
+
+		begin transaction registro
+			
+			insert into Venta(IdUsuario,TipoDocumento,NroDocumento,DocumentoCliente,NombreCliente,MontoPago,MontoCambio,MontoTotal)
+			values (@IdUsuario,@TipoDocumento,@NumeroDocumento,@DocumentoCliente,@NombreCliente,@MontoPago,@MontoCambio,@MontoTotal)
+
+			set @IdVenta = SCOPE_IDENTITY()
+
+			insert into Detalle_Venta(IdVenta,IdProducto,PrecioVenta,Cantidad,SubTotal)
+			select @IdVenta,IdProducto,PrecioVenta,Cantidad,SubTotal from @DetalleVenta
+
+		commit transaction registro
+	end try
+	begin catch
+		set @Resultado = 0
+		set @Mensaje = ERROR_MESSAGE()
+		rollback transaction registro
+	end catch
+end
+go
+
+select * from Venta
+select * from Detalle_Venta
+go
+
+select * from Producto
