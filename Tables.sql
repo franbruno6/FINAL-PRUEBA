@@ -270,3 +270,9 @@ select
 from Detalle_Compra
 inner join Producto on Producto.Id = Detalle_Compra.IdProducto
 where Detalle_Compra.IdCompra = 4
+
+select Compra.Id,Usuario.NombreCompleto,Proveedor.Documento,Proveedor.RazonSocial,Compra.TipoDocumento,Compra.NroDocumento,Compra.MontoTotal,convert(char(10),Compra.FechaCreacion,103)[FechaCreacion]from Compra inner join Usuario on Usuario.Id = Compra.IdUsuario inner join Proveedor on Proveedor.Id = Compra.IdProveedor where Compra.NroDocumento = '00004'
+
+--VIDEO 18-- SELECT PRODUCTO PARA CHECKEAR UNA COSA
+
+select * from Producto

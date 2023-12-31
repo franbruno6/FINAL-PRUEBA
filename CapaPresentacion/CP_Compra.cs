@@ -80,7 +80,7 @@ namespace CapaPresentacion
                     txtpreciocompra.Text = string.Empty;
                     txtprecioventa.Text = string.Empty;
                     numcantidad.Value = 1;
-                    txtidproducto.Focus();
+                    txtcodproducto.Focus();
                 }
             }
         }
