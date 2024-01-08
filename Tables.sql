@@ -276,3 +276,21 @@ select Compra.Id,Usuario.NombreCompleto,Proveedor.Documento,Proveedor.RazonSocia
 --VIDEO 18-- SELECT PRODUCTO PARA CHECKEAR UNA COSA
 
 select * from Producto
+
+--VIDEO 20 -- SELECT TABLA VENTA CON INNER JOINS PARA VER EL DETALLE DE LA VENTA
+
+select
+	Venta.Id,DocumentoCliente,NombreCliente,TipoDocumento,NroDocumento,MontoPago,MontoCambio,MontoTotal,
+	Usuario.NombreCompleto,
+	convert(char(10),Venta.FechaCreacion,103)[FechaCreacion] 
+from Venta
+inner join Usuario on Usuario.Id = Venta.IdUsuario
+where Venta.NroDocumento = '00001'
+go
+
+select 
+	Producto.Nombre,Detalle_Venta.PrecioVenta,Detalle_Venta.Cantidad,Detalle_Venta.SubTotal
+from Detalle_Venta
+inner join Producto on Producto.Id = Detalle_Venta.IdProducto
+where IdVenta = 1
+go
